@@ -113,8 +113,30 @@ function sendMessageText(userId, message) {
     };
 
     callSendAPI(messageDate);
+}
 
 
+function sendMessageImage(userId) {
+
+    ///API imgur 
+
+    var messageData = {
+        recipient: {
+            id: userId
+        },
+        message: {
+            attachment: {
+                type: "image",
+                payload: {
+                    url: "http://i.imgur.com/SOFXhd6.jpg"
+                }
+            }
+        }
+
+    };
+
+
+    callSendAPI(messageData);
 }
 
 //exports.app = functions.https.onRequest(app);
