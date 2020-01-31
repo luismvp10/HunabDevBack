@@ -62,9 +62,6 @@ const app = require('./app');
 const port = 5000;
 
 
-// app.listen(port, function() {
-//     console.log('Listening to Port ' + port);
-// });
 
 async function main() {
     await app.listen(app.get('port'));
@@ -74,8 +71,7 @@ async function main() {
 main();
 
 exports.app = functions.https.onRequest(app);
-    // await app.listen(app.get('port'));
-    // console.log("Server on port "+app.get('port'));
+
 
 
 
