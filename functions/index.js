@@ -57,9 +57,9 @@
 //
 // exports.app = functions.https.onRequest(app);
 const functions = require('firebase-functions');
-require('dotenv').config();
+require('dotenv').config({ path: 'variables.env' });
+//require('dotenv').config();
 const app = require('./app');
-const port = 5000;
 
 
 
@@ -72,6 +72,10 @@ main();
 
 exports.app = functions.https.onRequest(app);
 
+const verifyWebhook = require('./verify-webhook');
+app.get('/', verifyWebhook);
 
 
+const messageWebhook = require('./message-webhook');
+app.post('/', messageWebhook);
 
