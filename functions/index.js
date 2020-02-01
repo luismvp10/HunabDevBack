@@ -57,8 +57,8 @@
 //
 // exports.app = functions.https.onRequest(app);
 const functions = require('firebase-functions');
-require('dotenv').config({ path: 'variables.env' });
-//require('dotenv').config();
+// require('dotenv').config({ path: 'variables.env' });
+require('dotenv').config();
 const app = require('./app');
 
 
